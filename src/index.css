@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-pixel: 'Silkscreen', monospace;
+  
+  --color-bg-dark: #0B0C10;
+  --color-surface-dark: #13151D;
+  --color-surface-elevated: #1A1D28;
+  --color-border-dark: #262A38;
+  --color-border-accent: #373E52;
+
+  --color-gold-primary: #F59E0B;
+  --color-gold-deep: #D97706;
+  --color-gold-pale: #FDE68A;
+  --color-gold-glow: #FBBF24;
+
+  --color-pixel-cyan: #06B6D4;
+  --color-pixel-emerald: #10B981;
+  --color-pixel-purple: #8B5CF6;
+  --color-pixel-pink: #EC4899;
+}
+
+@layer base {
+  * {
+    border-color: #262A38;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: #0B0C10;
+    color: #E5E7EB;
+  }
+  
+  body {
+    background-color: #0B0C10;
+    color: #E5E7EB;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    color: #F9FAFB;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .font-pixel {
+    font-family: var(--font-pixel);
+  }
+}
+
+/* Subtle Pixel Grid Background */
+.pixel-grid {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(245, 158, 11, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 158, 11, 0.05) 1px, transparent 1px);
+}
+
+.pixel-dots {
+  background-image: radial-gradient(rgba(245, 158, 11, 0.15) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+
+/* Pixel Art Stepped Borders */
+.pixel-border-gold {
+  box-shadow: 
+    0 -2px 0 0 #F59E0B,
+    0 2px 0 0 #F59E0B,
+    -2px 0 0 0 #F59E0B,
+    2px 0 0 0 #F59E0B;
+}
+
+.pixel-border-dark {
+  box-shadow: 
+    0 -2px 0 0 #262A38,
+    0 2px 0 0 #262A38,
+    -2px 0 0 0 #262A38,
+    2px 0 0 0 #262A38;
+}
+
+/* Luminous Bioluminescent Golden Glows for Dark Mode */
+.gold-glow-dark {
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.5)) drop-shadow(0 0 4px rgba(251, 191, 36, 0.8));
+}
+
+.cyan-glow-dark {
+  filter: drop-shadow(0 0 16px rgba(6, 182, 212, 0.5)) drop-shadow(0 0 4px rgba(56, 189, 248, 0.8));
+}
+
+.emerald-glow-dark {
+  filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.5)) drop-shadow(0 0 4px rgba(52, 211, 153, 0.8));
+}
+
+.purple-glow-dark {
+  filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 4px rgba(167, 139, 250, 0.8));
+}
+
+/* Custom Scrollbar for Dark Mode */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262A38;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F59E0B;
+}
